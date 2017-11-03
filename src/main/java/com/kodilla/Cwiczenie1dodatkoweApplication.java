@@ -4,15 +4,12 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 import java.util.HashMap;
-import java.util.Map;
 
 
 @SpringBootApplication
-public class Cwiczenie1dodatkoweApplication
-{
+public class Cwiczenie1dodatkoweApplication {
 
-	public static void main(String[] args)
-	{
+	public static void main(String[] args) {
 
 		SpringApplication.run(Cwiczenie1dodatkoweApplication.class, args);
 
@@ -30,32 +27,26 @@ public class Cwiczenie1dodatkoweApplication
 		query[2] = "harry";
 
 
-
 		System.out.println("\nChecking connection between Query and HashMap:\n");
 
 
-
-		for (int i = 0; i < 3; i++)
-		{
+		for (int i = 0; i < query.length; i++) {
 			String check = query[i];
 			System.out.println("\nFor query position: \"" + check + "\" HashMap value is equal to: ");
 
-			for (Map.Entry<String, Integer> entry:familly.entrySet())
+
+			if (familly.containsKey(check))
 			{
-
-				if (check == entry.getKey())
-				{
-					System.out.println(entry.getValue());
-				}
-				else
-				{
-					System.out.println("not found");
-				}
-
+				System.out.println(familly.get(check));
+			} else {
+				System.out.println("not found");
 			}
+
+
 
 		}
 
 
 	}
 }
+
